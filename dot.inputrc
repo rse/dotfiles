@@ -1,0 +1,26 @@
+##
+##  ~/.inputrc
+##
+
+#   be 8-bit clean
+set input-meta on
+set output-meta on
+
+#   allow the use of 8-bit characters (like the German umlauts)
+#   However this makes the meta key not work as a meta key, which could
+#   be annoying to those who do not need to type in 8-bit characters.
+set meta-flag on
+set convert-meta off
+
+#   show all completions immediately instead of ringing the bell
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+#   make SHIFT-LEFT/SHIFT-RIGHT to word-wise jump backward/forward
+"[1;2D": shell-backward-word
+"[1;2C": shell-forward-word
+
+#   make CTRL-LEFT/CTRL-RIGHT to word-wise kill backward/forward
+"[1;5D": shell-backward-kill-word
+"[1;5C": shell-kill-word
+
