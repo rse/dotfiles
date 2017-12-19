@@ -20,8 +20,35 @@ cnoremap <C-A> <Home>
 "   tell me where I'm inside the file. Also enable TAB completion (wildmenu)
 set laststatus=2
 set cmdheight=1
-set ruler
 set wildmenu
+set ruler
+set statusline=%<%f\ %h%m%r%=%{StatusLineCounts()}\ \ %-14.(%l,%c%V%)\ %P
+
+"   determine the word and character count of the buffer or current selection
+function! StatusLineCounts()
+    "   fetch output of g<CTRL-g>
+    let position = getpos(".")
+    let s:old_status = v:statusmsg
+    exe ":silent normal g\<c-g>"
+    let stat = v:statusmsg
+    let v:statusmsg = s:old_status
+    call setpos('.', position)
+
+    "  possible outputs (for regular and selected situations):
+    "  Col X of X; Line X of X; Word X of X; Byte X of X
+    "  Selected X of X Lines; X of X Words; X of X Bytes
+    let s:word_count = 0
+    let s:char_count = 0
+    if stat =~# '^Col \d\+ of \d\+; Line \d\+ of \d\+; Word \d\+ of \d\+; Byte \d\+ of \d\+$'
+        let s:word_count = str2nr(split(stat)[11])
+        let s:char_count = str2nr(split(stat)[15])
+    elseif stat =~# '^Selected \d\+ of \d\+ Lines; \d\+ of \d\+ Words; \d\+ of \d\+ Bytes$'
+        let s:word_count = str2nr(split(stat)[5])
+        let s:char_count = str2nr(split(stat)[9])
+    end
+    return (s:word_count . "w," . s:char_count . "c")
+endfunction
+
 
 "   show command and modes
 set showcmd
