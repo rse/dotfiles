@@ -5,7 +5,7 @@
 "##
 
 "   we require Vim and do not have to be Vi compatible
-version 7.0
+version 8.0
 set nocompatible
 
 "   ==== TERMINAL HANDLING ===================================================
