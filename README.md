@@ -18,20 +18,11 @@ Overview
 
 The particular "dot-files" are:
 
-- [dot.bash_login](./dot.bash_login): (`~/.bash_login`)<br/>
-  bash(1) login run-command script
-
-- [dot.bashrc](./dot.bashrc): (`~/.bashrc`)<br/>
-  bash(1) run-command script
-
-- [dot.inputrc](./dot.inputrc): (`~/.inputrc`)<br/>
-  bash(1) readline configuration
-
-- [dot.tmux.conf](./dot.tmux.conf): (`~/.tmux.conf`)<br/>
-  tmux(1) configuration
-
-- [dot.vimrc](./dot.vimrc): (`~/.vimrc`)<br/>
-  vim(1) configuration
+- [dot.bash_login](./dot.bash_login) (`~/.bash_login`): bash(1) login run-command script
+- [dot.bashrc](./dot.bashrc) (`~/.bashrc`): bash(1) run-command script
+- [dot.inputrc](./dot.inputrc) (`~/.inputrc`): bash(1) readline configuration
+- [dot.tmux.conf](./dot.tmux.conf) (`~/.tmux.conf`): tmux(1) configuration
+- [dot.vimrc](./dot.vimrc) (`~/.vimrc`): vim(1) configuration
 
 Hint
 ----
