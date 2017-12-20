@@ -50,6 +50,22 @@ alias ll="ls -l"
 alias la="ls -la"
 export BLOCKSIZE=1024
 
+#   determine reasonable search paths
+__mkpath () {
+    eval "unset $1"
+    for __dir in $2; do
+        [[ ${__dir: -1} != / ]] && __dir="$__dir/"
+        for __subdir in $3; do
+            if [[ -d "$__dir$__subdir" ]]; then
+                eval "$1=\"\$$1\${$1+:}$__dir$__subdir\""
+            fi
+        done
+    done
+}
+__mkpath PATH    "$HOME /opt/local /opt /usr/opkg /usr/local            /usr /" "bin sbin"
+__mkpath MANPATH "$HOME /opt/local /opt /usr/opkg /usr/local /usr/share /usr  " "man"
+unset __mkpath
+
 #   optionally enable FZF integration
 if [[ -f ~/.bash-fzf.rc ]]; then
     source ~/.bash-fzf.rc
