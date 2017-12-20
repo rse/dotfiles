@@ -1,5 +1,7 @@
 "##
-"## ~/.vimrc
+"## ~/.vimrc -- vim(1) configuration
+"## Copyright (c) 1995-2017 Ralf S. Engelschall <rse@engelschall.com>
+"## Distributed under MIT <https://opensource.org/licenses/MIT> license.
 "##
 
 "   we require Vim and do not have to be Vi compatible

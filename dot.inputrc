@@ -1,5 +1,7 @@
 ##
-##  ~/.inputrc
+##  ~/.inputrc -- bash(1) readline configuration
+##  Copyright (c) 1995-2017 Ralf S. Engelschall <rse@engelschall.com>
+##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
 ##
 
 #   be 8-bit clean

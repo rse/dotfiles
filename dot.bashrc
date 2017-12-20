@@ -1,5 +1,7 @@
 ##
-##  ~/.bashrc
+##  ~/.bashrc -- bash(1) run-command script
+##  Copyright (c) 1995-2017 Ralf S. Engelschall <rse@engelschall.com>
+##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
 ##
 
 #   customize locale
