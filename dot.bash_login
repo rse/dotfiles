@@ -1,0 +1,8 @@
+##
+##  ~/.bash_login -- bash(1) login run-command script
+##  Copyright (c) 1995-2017 Ralf S. Engelschall <rse@engelschall.com>
+##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
+##
+
+source ~/.bashrc
+
