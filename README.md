@@ -11,19 +11,19 @@ feature configuration, but the bare minimum of a reasonable pre-configuration.
 
 The particular "dot-files" are:
 
-- [dot.bash_login](dot.bash_login): (`~/.bash_login`)<br/>
+- [dot.bash_login](./dot.bash_login): (`~/.bash_login`)<br/>
   bash(1) login run-command script
 
-- [dot.bashrc](dot.bashrc): (`~/.bashrc`)<br/>
+- [dot.bashrc](./dot.bashrc): (`~/.bashrc`)<br/>
   bash(1) run-command script
 
-- [dot.inputrc](dot.inputrc): (`~/.inputrc`)<br/>
+- [dot.inputrc](./dot.inputrc): (`~/.inputrc`)<br/>
   bash(1) readline configuration
 
-- [dot.tmux.conf](dot.tmux.conf): (`~/.tmux.conf`)<br/>
+- [dot.tmux.conf](./dot.tmux.conf): (`~/.tmux.conf`)<br/>
   tmux(1) configuration
 
-- [dot.vimrc](dot.vimrc): (`~/.vimrc`)<br/>
+- [dot.vimrc](./dot.vimrc): (`~/.vimrc`)<br/>
   vim(1) configuration
 
 Copyright (c) 1995-2017 [Ralf S. Engelschall](mailto:rse@engelschall.com).<br/>
