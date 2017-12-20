@@ -61,6 +61,7 @@ __mkpath () {
             fi
         done
     done
+    eval "export $1"
 }
 __mkpath PATH    "$HOME /opt/local /opt /usr/opkg /usr/local            /usr /" "bin sbin"
 __mkpath MANPATH "$HOME /opt/local /opt /usr/opkg /usr/local /usr/share /usr  " "man"
