@@ -50,3 +50,8 @@ alias ll="ls -l"
 alias la="ls -la"
 export BLOCKSIZE=1024
 
+#   optionally enable FZF integration
+if [[ -f ~/.bash-fzf.rc ]]; then
+    source ~/.bash-fzf.rc
+fi
+

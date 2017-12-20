@@ -29,6 +29,8 @@ The particular "dot-files" are:
 
 Hint: In practice this should be combinated with my [bash-fzf](https://github.com/rse/bash-fzf)
 scripts which further enhance the GNU Bash shell environment with the excellent FZF searching utility.
+For this just copy the [bash-fzf.rc](https://github.com/rse/bash-fzf/blob/master/bash-fzf.rc) script
+to `~/.bash-fzf.rc` and ensure that the [FZF](https://github.com/junegunn/fzf/) utility is in your `$PATH`, too.
 
 Copyright (c) 1995-2017 [Ralf S. Engelschall](mailto:rse@engelschall.com).<br/>
 Distributed under [MIT](https://opensource.org/licenses/MIT) license.
