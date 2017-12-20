@@ -1,6 +1,9 @@
 
-Ralf S. Engelschall's Unix Dot-Files
-====================================
+Essential Unix Dot-Files
+========================
+
+Abstract
+--------
 
 This is a very small collection of really essential Unix "dot-files" `~/.xxx`, i.e.,
 opinionated configuration files for the shell environment of a Unix user, based
@@ -9,6 +12,9 @@ the [TMux](https://tmux.github.io/) terminal multiplexer, the file pager
 [Less](http://www.greenwoodsoftware.com/less/) and the
 [Vim](http://www.vim.org/) file editor. The intention is not an extensive
 feature configuration, but the bare minimum of an opinionated pre-configuration.
+
+Overview
+--------
 
 The particular "dot-files" are:
 
@@ -27,10 +33,16 @@ The particular "dot-files" are:
 - [dot.vimrc](./dot.vimrc): (`~/.vimrc`)<br/>
   vim(1) configuration
 
-Hint: In practice, this optimally should be combined with my [bash-fzf](https://github.com/rse/bash-fzf)
+Hint
+----
+
+In practice, this optimally should be combined with my [bash-fzf](https://github.com/rse/bash-fzf)
 script which further enhances the GNU Bash shell environment with the excellent FZF searching functionality.
 For this, just copy the [bash-fzf.rc](https://github.com/rse/bash-fzf/blob/master/bash-fzf.rc) script
 to `~/.bash-fzf.rc` and ensure that the [FZF](https://github.com/junegunn/fzf/) utility is in your `$PATH`, too.
+
+License
+-------
 
 Copyright (c) 1995-2017 [Ralf S. Engelschall](mailto:rse@engelschall.com).<br/>
 Distributed under [MIT](https://opensource.org/licenses/MIT) license.
