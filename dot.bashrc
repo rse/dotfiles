@@ -50,8 +50,3 @@ alias ll="ls -l"
 alias la="ls -la"
 export BLOCKSIZE=1024
 
-#   optionally load bash-fzf functionality
-if [[ -f /usr/share/ps-bash-fzf/bash-fzf.rc ]]; then
-    source /usr/share/ps-bash-fzf/bash-fzf.rc
-fi
-
