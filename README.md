@@ -27,7 +27,7 @@ The particular "dot-files" are:
 - [dot.vimrc](./dot.vimrc): (`~/.vimrc`)<br/>
   vim(1) configuration
 
-Hint: In practice, this should be optimally combined with my [bash-fzf](https://github.com/rse/bash-fzf)
+Hint: In practice, this optimally should be combined with my [bash-fzf](https://github.com/rse/bash-fzf)
 scripts which further enhance the GNU Bash shell environment with the excellent FZF searching utility.
 For this just copy the [bash-fzf.rc](https://github.com/rse/bash-fzf/blob/master/bash-fzf.rc) script
 to `~/.bash-fzf.rc` and ensure that the [FZF](https://github.com/junegunn/fzf/) utility is in your `$PATH`, too.
