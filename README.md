@@ -28,8 +28,8 @@ The particular "dot-files" are:
   vim(1) configuration
 
 Hint: In practice, this optimally should be combined with my [bash-fzf](https://github.com/rse/bash-fzf)
-scripts which further enhance the GNU Bash shell environment with the excellent FZF searching utility.
-For this just copy the [bash-fzf.rc](https://github.com/rse/bash-fzf/blob/master/bash-fzf.rc) script
+script which further enhances the GNU Bash shell environment with the excellent FZF searching functionality.
+For this, just copy the [bash-fzf.rc](https://github.com/rse/bash-fzf/blob/master/bash-fzf.rc) script
 to `~/.bash-fzf.rc` and ensure that the [FZF](https://github.com/junegunn/fzf/) utility is in your `$PATH`, too.
 
 Copyright (c) 1995-2017 [Ralf S. Engelschall](mailto:rse@engelschall.com).<br/>
