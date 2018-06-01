@@ -72,3 +72,8 @@ if [[ -f ~/.bash-fzf.rc ]]; then
     source ~/.bash-fzf.rc
 fi
 
+#   optionally enable ENVRC functionality
+if [[ -f ~/.bash-envrc.rc ]]; then
+    source ~/.bash-envrc.rc
+fi
+
