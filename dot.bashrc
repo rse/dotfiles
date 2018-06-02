@@ -75,5 +75,6 @@ fi
 #   optionally enable ENVRC functionality
 if [[ -f ~/.bash-envrc.rc ]]; then
     source ~/.bash-envrc.rc
+    envrc switch -i "$HOME"
 fi
 
