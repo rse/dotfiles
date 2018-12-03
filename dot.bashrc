@@ -26,6 +26,7 @@ alias more="less -r"
 
 #   customize filesystem handling
 umask 022
+shopt -s autocd
 shopt -s dirspell
 shopt -s cdspell
 shopt -s no_empty_cmd_completion
@@ -42,8 +43,10 @@ shopt -s histappend
 shopt -s lithist
 HISTSIZE=1000
 HISTFILESIZE=1000
-HISTIGNORE="&"
+HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S  "
+HISTCONTROL="erasedups:ignoreboth"
+PROMPT_COMMAND="history -a"
 
 #   customize ls(1) command
 alias ll="ls -l"
