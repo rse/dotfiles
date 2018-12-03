@@ -18,11 +18,18 @@ set convert-meta off
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 
-#   make SHIFT-LEFT/SHIFT-RIGHT to word-wise jump backward/forward
-"[1;2D": shell-backward-word
-"[1;2C": shell-forward-word
+#   add a trailing slash when autocompleting symlinks to directories
+set mark-symlinked-directories on
 
-#   make CTRL-LEFT/CTRL-RIGHT to word-wise kill backward/forward
-"[1;5D": shell-backward-kill-word
-"[1;5C": shell-kill-word
+#   make UP/DOWN to perform incremental history search
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+#   make LEFT/RIGHT to character-wise move backward/forward
+"\e[C": forward-char
+"\e[D": backward-char
+
+#   make Alt/Meta+LEFT/SHIFT-RIGHT to word-wise move backward/forward
+"\C-ap": shell-backward-word
+"\C-an": shell-forward-word
 
