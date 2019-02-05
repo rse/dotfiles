@@ -53,6 +53,17 @@ alias ll="ls -l"
 alias la="ls -la"
 export BLOCKSIZE=1024
 
+#   provide tmux(1) wrapper command
+tmux-session () {
+    if [[ $# -ge 1 ]]; then
+        session="$1"
+        shift
+    else
+        session=default
+    fi
+    tmux new-session -A -t "$session" "$@"
+}
+
 #   determine reasonable search paths
 __mkpath () {
     eval "unset $1"
