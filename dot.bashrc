@@ -61,7 +61,7 @@ tmux-session () {
     else
         session=default
     fi
-    tmux new-session -A -t "$session" "$@"
+    tmux new-session -A -s "$session" "$@"
 }
 
 #   determine reasonable search paths
