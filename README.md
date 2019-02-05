@@ -35,6 +35,6 @@ to `~/.bash-fzf.rc` and ensure that the [FZF](https://github.com/junegunn/fzf/) 
 License
 -------
 
-Copyright (c) 1995-2017 [Ralf S. Engelschall](mailto:rse@engelschall.com).<br/>
+Copyright (c) 1995-2019 [Ralf S. Engelschall](mailto:rse@engelschall.com).<br/>
 Distributed under [MIT](https://opensource.org/licenses/MIT) license.
 
