@@ -1,0 +1,136 @@
+##
+##  ~/.gitconfig -- git(1) configuration
+##  Copyright (c) 1995-2019 Ralf S. Engelschall <rse@engelschall.com>
+##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
+##
+
+#[http]
+#    proxy              = http://proxy:proxy@proxy.example.com:3128
+
+#[user]
+#    name               = John Doe
+#    email              = john.doe@example.com
+#    username           = johndoe
+
+#[github]
+#    user               = johndoe
+#    token              = 00000000000000000000000000000000
+
+[url "https://github.com/"]
+    insteadOf          = "github:"
+
+[url "ssh://git@github.com/"]
+    insteadOf          = "github:"
+    pushInsteadOf      = "github:"
+
+[color]
+    ui                 = true
+
+[color "diff"]
+    old                = red
+    new                = blue
+    whitespace         = yellow reverse
+
+[color "status"]
+    added              = blue
+    changed            = red
+    untracked          = yellow
+
+[push]
+    default            = simple
+    followTags         = true
+
+[merge]
+    ff                 = only
+    conflictstyle      = diff3
+
+[branch "master"]
+    rebase             = true
+
+[status]
+    showUntrackedFiles = all
+
+[alias]
+    #   convenient abbreviations of standard commands (plain)
+    co                 = checkout
+    ci                 = commit
+    di                 = diff
+    gr                 = grep
+    mg                 = merge
+    rb                 = rebase
+    br                 = branch
+
+    #   convenient abbreviations of standard commands (with defaults)
+    st                 = status --short --branch
+    br                 = branch --all --verbose --verbose
+    lg                 = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(blue)<%an>%Creset"
+
+    #   rebasing short-hands
+    rbi                = rebase --interactive @{upstream}
+    rbc                = rebase --continue
+    rbs                = rebase --skip
+    rba                = rebase --abort
+
+    #   release/unrelease (given) tag to remote
+    release            = !f(){ git tag $1 && git push --tags }; f
+    unrelease          = !f(){ git tag -d $1 && git push origin :$1 }; f
+
+    #   publish/unpublish (current) branch to remote
+    branch-name        = !git rev-parse --abbrev-ref HEAD
+    publish            = !git push -u origin $(git branch-name)
+    unpublish          = !git push origin :$(git branch-name)"
+
+    #   uploading of local changes
+    upload             = !git push && git push --tags
+
+    #   upgrade local branch
+    upgrade-intern     = !git fetch --prune --tags && git merge --ff-only || git rebase --preserve-merges
+    upgrade-extern     = submodule update --init --recursive --remote
+    upgrade            = !git upgrade-intern && git upgrade-extern
+
+    #   working with stash
+    #   (stash/unstash work in progress and perform point-in-time safe-guarding snapshots)
+    wip                = stash push -a
+    unwip              = stash pop
+    snapshot           = !git stash push -a -m "snapshot: $(date)" && git stash apply stash@{0}
+
+    #   working with index
+    #   (stage/unstage for commmit)
+    stage              = add --all
+    unstage            = reset HEAD
+
+    #   working with working-copy
+    #   (revert single file or all files to comitted state)
+    revert             = checkout --force
+    revert-all         = reset --hard HEAD
+
+    #   working with commits
+    #   (amend the last commit and undo the last commit)
+    amend              = commit -a --amend
+    undo               = reset --soft HEAD^
+    undo-hard          = reset --hard HEAD^
+
+    #   mark files as "assume unchanged", which means that Git will
+    #   treat them as though there are no changes to them, even if there
+    #   are. Useful for local temporary changes to tracked files.
+    assumed            = !git ls-files -v | grep ^h | cut -c 3-
+    assume             = update-index --assume-unchanged
+    unassume           = update-index --no-assume-unchanged
+
+    #   optimize a repository by pruning and repacking
+    optimize-prune     = !git prune --expire=now && git reflog expire --expire-unreachable=now --rewrite --all
+    optimize-repack    = repack -a -d -f --depth=300 --window=300 --window-memory=1g
+    optimize           = !git optimize-prune && git optimize-repack
+
+    #   delete all branches which were already merged into the "master" branch
+    branches-prune     = !git branch --no-color --merged master | grep -v "\\* master" | grep -v "\\*" | xargs -n 1 git branch -d
+
+    #   guidance: how to list certain things
+    branches           = branch -a
+    tags               = tag -n1 --list
+    stashes            = stash list
+
+    #   guidance: how to create a new branch and the reverse of "git add"
+    new                = checkout -b
+    del                = reset HEAD
+

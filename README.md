@@ -9,8 +9,9 @@ This is a very small collection of really essential Unix "dot-files" `~/.xxx`, i
 opinionated configuration files for the shell environment of a Unix user, based
 on the absolutely essential [GNU Bash](https://www.gnu.org/software/bash/) shell environment,
 the [TMux](https://tmux.github.io/) terminal multiplexer, the file pager
-[Less](http://www.greenwoodsoftware.com/less/) and the
-[Vim](http://www.vim.org/) file editor. The intention is not an extensive
+[Less](http://www.greenwoodsoftware.com/less/), the
+[Vim](http://www.vim.org/) file editor and the
+[Git](https://git-scm.com/) distributed version control system. The intention is not an extensive
 feature configuration, but the bare minimum of an opinionated pre-configuration.
 
 Overview
@@ -23,6 +24,7 @@ The particular "dot-files" are:
 - [dot.inputrc](./dot.inputrc) (`~/.inputrc`): bash(1) readline configuration
 - [dot.tmux.conf](./dot.tmux.conf) (`~/.tmux.conf`): tmux(1) configuration
 - [dot.vimrc](./dot.vimrc) (`~/.vimrc`): vim(1) configuration
+- [dot.gitconfig](./dot.gitconfig) (`~/.gitconfig`): git(1) configuration
 
 Hint
 ----
