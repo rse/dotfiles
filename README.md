@@ -34,6 +34,12 @@ script which further enhances the GNU Bash shell environment with the excellent 
 For this, just copy the [bash-fzf.rc](https://github.com/rse/bash-fzf/blob/master/bash-fzf.rc) script
 to `~/.bash-fzf.rc` and ensure that the [FZF](https://github.com/junegunn/fzf/) utility is in your `$PATH`, too.
 
+Similarly, this optimally can also be combined with my [bash-envrc](https://github.com/rse/bash-envrc)
+script which further enhances the GNU Bash shell environment with the possibility to automatically
+activate environment variables through the execution of (explicitly to be whitelisted) `.envrc` run-command scripts.
+For this, just copy the [bash-envrc.rc](https://github.com/rse/bash-envrc/blob/master/bash-envrc.rc) script
+to `~/.bash-envrc.rc`.
+
 License
 -------
 
