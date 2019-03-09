@@ -75,8 +75,8 @@
     rba                = rebase --abort
 
     #   release/unrelease (given) tag to remote
-    release            = "!f(){ git tag $1 && git push --tags }; f"
-    unrelease          = "!f(){ git tag -d $1 && git push origin :$1 }; f"
+    release            = "!f(){ git tag $1 && git push --tags; };f"
+    unrelease          = "!f(){ git tag -d $1 && git push origin \":$1\"; };f"
 
     #   publish/unpublish (current) branch to remote
     branch-name        = !git rev-parse --abbrev-ref HEAD
