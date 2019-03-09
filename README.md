@@ -26,6 +26,15 @@ The particular "dot-files" are:
 - [dot.vimrc](./dot.vimrc) (`~/.vimrc`): vim(1) configuration
 - [dot.gitconfig](./dot.gitconfig) (`~/.gitconfig`): git(1) configuration
 
+Installation
+------------
+
+You can install the package with:
+
+```
+$ make install [DESTDIR=<dir>] [prefix=<dir>] [datadir=<dir>]
+```
+
 Hint
 ----
 
