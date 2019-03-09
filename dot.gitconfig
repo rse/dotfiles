@@ -75,13 +75,13 @@
     rba                = rebase --abort
 
     #   release/unrelease (given) tag to remote
-    release            = '!f(){ git tag $1 && git push --tags }; f'
-    unrelease          = '!f(){ git tag -d $1 && git push origin :$1 }; f'
+    release            = "!f(){ git tag $1 && git push --tags }; f"
+    unrelease          = "!f(){ git tag -d $1 && git push origin :$1 }; f"
 
     #   publish/unpublish (current) branch to remote
     branch-name        = !git rev-parse --abbrev-ref HEAD
-    publish            = '!git push -u origin $(git branch-name)'
-    unpublish          = '!git push origin :$(git branch-name)'
+    publish            = "!git push -u origin $(git branch-name)"
+    unpublish          = "!git push origin :$(git branch-name)"
 
     #   uploading of local changes
     upload             = !git push && git push --tags
@@ -95,7 +95,7 @@
     #   (stash/unstash work in progress and perform point-in-time safe-guarding snapshots)
     wip                = stash push -a
     unwip              = stash pop
-    snapshot           = '!git stash push -a -m "snapshot: $(date)" && git stash apply stash@{0}'
+    snapshot           = "!git stash push -a -m \"snapshot: $(date)\" && git stash apply stash@{0}"
 
     #   working with index
     #   (stage/unstage for commmit)
@@ -126,7 +126,7 @@
     optimize           = !git optimize-prune && git optimize-repack
 
     #   delete all branches which were already merged into the "master" branch
-    branches-prune     = '!git branch --no-color --merged master | grep -v "\\* master" | grep -v "\\*" | xargs -n 1 git branch -d'
+    branches-prune     = "!git branch --no-color --merged master | grep -v \"\\* master\" | grep -v \"\\*\" | xargs -n 1 git branch -d"
 
     #   guidance: how to list certain things
     branches           = branch -a
