@@ -35,6 +35,10 @@ You can install the package with:
 $ make install [DESTDIR=<dir>] [prefix=<dir>] [datadir=<dir>]
 ```
 
+Ensure that the essential Unix commands bash(1), tmux(1), less(1),
+vim(1) and git(1) are available on your system. If not, install them
+with your preferred Unix software packaging mechanism.
+
 Hint
 ----
 
