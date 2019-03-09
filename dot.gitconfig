@@ -81,7 +81,7 @@
     #   publish/unpublish (current) branch to remote
     branch-name        = !git rev-parse --abbrev-ref HEAD
     publish            = !git push -u origin $(git branch-name)
-    unpublish          = !git push origin :$(git branch-name)"
+    unpublish          = !git push origin :$(git branch-name)
 
     #   uploading of local changes
     upload             = !git push && git push --tags
