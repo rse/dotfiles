@@ -10,8 +10,9 @@ datadir = $(prefix)/share/dotfiles
 all:
 
 install:
-	./shtool mkdir -f -p -m 755 $(DESTDIR)$(datadir)
+	./shtool mkdir -f -p -m 755 $(DESTDIR)$(bindir)
 	./shtool install -c -m 755 -e 's;@datadir@;$(datadir);g' dotfiles.sh $(DESTDIR)$(bindir)/dotfiles
+	./shtool mkdir -f -p -m 755 $(DESTDIR)$(datadir)
 	./shtool install -c -m 644 dot.bash_login $(DESTDIR)$(datadir)
 	./shtool install -c -m 644 dot.bash_login $(DESTDIR)$(datadir)
 	./shtool install -c -m 644 dot.bashrc     $(DESTDIR)$(datadir)
