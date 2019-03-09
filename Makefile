@@ -10,4 +10,5 @@ install:
 	cp dot.inputrc    $$HOME/.inputrc
 	cp dot.tmux.conf  $$HOME/.tmux.conf
 	cp dot.vimrc      $$HOME/.vimrc
+	cp dot.gitconfig  $$HOME/.gitconfig
 
