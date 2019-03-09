@@ -34,7 +34,6 @@ shopt -s checkhash
 shopt -s globstar
 alias -- +="cd +"
 alias -- -="cd -"
-alias -- .="cd $OLDPWD"
 alias -- ..="cd .."
 
 #   customize history management
