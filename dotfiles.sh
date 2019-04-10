@@ -56,10 +56,11 @@ installfile () {
 }
 
 #   install all dot files
-installfile bash_login "bash(1) login-hook script"
-installfile bashrc     "bash(1) run-command script"
-installfile inputrc    "bash(1) readline configuration"
-installfile tmux.conf  "tmux(1) configuration"
-installfile vimrc      "vim(1) configuration"
-installfile gitconfig  "git(1) configuration"
+installfile bash_login  "bash(1) login-hook script"
+installfile bash_logout "bash(1) logout-hook script"
+installfile bashrc      "bash(1) run-command script"
+installfile inputrc     "bash(1) readline configuration"
+installfile tmux.conf   "tmux(1) configuration"
+installfile vimrc       "vim(1) configuration"
+installfile gitconfig   "git(1) configuration"
 

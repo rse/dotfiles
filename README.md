@@ -21,6 +21,7 @@ Overview
 The particular "dot-files" are:
 
 - [dot.bash_login](./dot.bash_login) (`~/.bash_login`): bash(1) login run-command script
+- [dot.bash_logout](./dot.bash_logout) (`~/.bash_logout`): bash(1) logout run-command script
 - [dot.bashrc](./dot.bashrc) (`~/.bashrc`): bash(1) run-command script
 - [dot.inputrc](./dot.inputrc) (`~/.inputrc`): bash(1) readline configuration
 - [dot.tmux.conf](./dot.tmux.conf) (`~/.tmux.conf`): tmux(1) configuration
