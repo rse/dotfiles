@@ -49,10 +49,10 @@ PROMPT_COMMAND="history -a"
 
 #   customize ls(1) command
 ls () {
-    case $OS in
-        freebsd ) CLICOLOR_FORCE=1 command ls -k -q -G ${1+"$@"} | $PAGER -X -E ;;
-        linux   ) command ls -k -q --color=always ${1+"$@"} | $PAGER -X -E ;;
-        *       ) command ls ${1+"$@"} | $PAGER -X -E ;;
+    case $OSTYPE in
+        *freebsd* ) CLICOLOR_FORCE=1 command ls -k -q -G ${1+"$@"} | $PAGER -X -E ;;
+        *linux*   ) command ls -k -q --color=always ${1+"$@"} | $PAGER -X -E ;;
+        *         ) command ls ${1+"$@"} | $PAGER -X -E ;;
     esac
 }
 alias ll="ls -l"
