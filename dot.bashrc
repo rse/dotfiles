@@ -48,9 +48,15 @@ HISTCONTROL="erasedups:ignoreboth"
 PROMPT_COMMAND="history -a"
 
 #   customize ls(1) command
+ls () {
+    case $OS in
+        freebsd ) CLICOLOR_FORCE=1 command ls -k -q -G ${1+"$@"} | $PAGER -X -E ;;
+        linux   ) command ls -k -q --color=always ${1+"$@"} | $PAGER -X -E ;;
+        *       ) command ls ${1+"$@"} | $PAGER -X -E ;;
+    esac
+}
 alias ll="ls -l"
 alias la="ls -la"
-export BLOCKSIZE=1024
 
 #   provide tmux(1) wrapper command
 tmux-session () {
