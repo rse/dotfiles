@@ -6,19 +6,20 @@ Essential Unix Dot-Files
 Abstract
 --------
 
-This is a very small collection of really essential Unix "dot-files" `~/.xxx`, i.e.,
-opinionated configuration files for the shell environment of a Unix user, based
+This is a very small collection of really essential Unix "dot-files" (`~/.xxx`), i.e.,
+opinionated configuration files for the shell environment of a Unix user. This environment is based
 on the absolutely essential [GNU Bash](https://www.gnu.org/software/bash/) shell environment,
 the [TMux](https://tmux.github.io/) terminal multiplexer, the file pager
 [Less](http://www.greenwoodsoftware.com/less/), the
 [Vim](http://www.vim.org/) file editor and the
-[Git](https://git-scm.com/) distributed version control system. The intention is not an extensive
-feature configuration, but the bare minimum of an opinionated pre-configuration.
+[Git](https://git-scm.com/) distributed version control system. The
+intention is not an extensive feature configuration, but the bare
+minimum of an opinionated pre-configuration.
 
 Overview
 --------
 
-The particular "dot-files" are:
+The particular Unix "dot-files" are:
 
 - [dot.bash_login](./dot.bash_login) (`~/.bash_login`): bash(1) login run-command script
 - [dot.bash_logout](./dot.bash_logout) (`~/.bash_logout`): bash(1) logout run-command script
