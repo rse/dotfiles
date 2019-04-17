@@ -178,11 +178,12 @@ imap  lxi
 syntax on
 
 "   reconfigure syntax highlighting to be very conservative in coloring
-highlight Statement  ctermbg=None      ctermfg=None      cterm=Bold
-highlight Type       ctermbg=None      ctermfg=None      cterm=Bold
+highlight Statement  ctermbg=None      ctermfg=DarkBlue  cterm=Bold
+highlight Keyword    ctermbg=None      ctermfg=DarkBlue  cterm=Bold
+highlight Type       ctermbg=None      ctermfg=DarkBlue  cterm=Bold
 highlight Constant   ctermbg=None      ctermfg=DarkRed   cterm=None
 highlight Identifier ctermbg=None      ctermfg=None      cterm=None
-highlight Comment    ctermbg=None      ctermfg=DarkBlue  cterm=None
+highlight Comment    ctermbg=None      ctermfg=DarkGrey  cterm=None
 highlight PreProc    ctermbg=None      ctermfg=DarkRed   cterm=None
 highlight Special    ctermbg=None      ctermfg=DarkRed   cterm=None
 highlight Ignore     ctermbg=None      ctermfg=White     cterm=Bold
@@ -191,7 +192,7 @@ highlight Error      ctermbg=DarkRed   ctermfg=White     cterm=Bold
 highlight Todo       ctermbg=DarkRed   ctermfg=White     cterm=Bold
 highlight Constant   ctermbg=None      ctermfg=DarkRed   cterm=None
 highlight Title      ctermbg=None      ctermfg=DarkBlue  cterm=None
-highlight MatchParen ctermbg=None      ctermfg=Red       cterm=Bold
+highlight MatchParen ctermbg=None      ctermfg=DarkRed   cterm=None
 highlight Pmenu      ctermbg=White     ctermfg=None      cterm=None
 highlight PmenuSel   ctermbg=Black     ctermfg=White     cterm=None
 highlight PmenuSbar  ctermbg=Black     ctermfg=White     cterm=None
@@ -199,4 +200,6 @@ highlight DiffAdd    ctermbg=DarkBlue  ctermfg=White     cterm=None
 highlight DiffDelete ctermbg=DarkRed   ctermfg=White     cterm=None
 highlight DiffChange ctermbg=Yellow    ctermfg=Black     cterm=None
 highlight DiffText   ctermbg=Yellow    ctermfg=DarkRed   cterm=Bold
+highlight htmlItalic ctermbg=None      ctermfg=DarkRed   cterm=None
+highlight htmlBold   ctermbg=None      ctermfg=DarkRed   cterm=Bold
 
