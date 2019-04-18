@@ -4,13 +4,27 @@
 ##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
 ##
 
-#   customize locale
+#   enforce UTF-8 locale
 export LC_CTYPE="en_US.UTF-8"
+
+#   determine terminal colors
+ps1_col_num=$(tput colors 2>/dev/null)
+if [[ -n $ps1_col_num && $ps1_col_num -ge 8 ]]; then
+    #   determine terminal color sequences
+    ps1_col_bl=$(tput setaf 4)
+    ps1_col_rd=$(tput setaf 1)
+    ps1_col_no=$(tput sgr0)
+else
+    #   fallback to no coloring
+    ps1_col_bl=""
+    ps1_col_rd=""
+    ps1_col_no=""
+fi
 
 #   customize interactive prompt
 shopt -s promptvars
 PROMPT_DIRTRIM=11
-PS1="\\u@\\h:\$PWD\n\\$ "
+PS1="${ps1_col_bl}\\u@\\h${ps1_col_no}:${ps1_col_rd}\${PWD}${ps1_col_no}\n\\\$ "
 PS2="> "
 
 #   perform shell window size checking
