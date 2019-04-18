@@ -8,8 +8,8 @@
 export LC_CTYPE="en_US.UTF-8"
 
 #   determine terminal colors
-ps1_col_num=$(tput colors 2>/dev/null)
-if [[ -n $ps1_col_num && $ps1_col_num -ge 8 ]]; then
+term_colors=$(tput colors 2>/dev/null)
+if [[ -n $term_colors && $term_colors -ge 8 ]]; then
     #   determine terminal color sequences
     ps1_col_bl=$(tput setaf 4)
     ps1_col_rd=$(tput setaf 1)
@@ -34,9 +34,9 @@ fi
 
 #   customize editor/pager handling
 export EDITOR=vim
-export PAGER="less -r"
-export PAGER_FLAGS="-r"
-alias more="less -r"
+export PAGER="less"
+export PAGER_FLAGS=""
+alias more="less"
 
 #   customize filesystem handling
 umask 022
@@ -62,15 +62,41 @@ HISTCONTROL="erasedups:ignoreboth"
 PROMPT_COMMAND="history -a"
 
 #   customize ls(1) command
-ls () {
+ls_options=""
+ls_pager="$PAGER -X -E"
+case $OSTYPE in
+    *freebsd* ) ls_options="$ls_options -k -q" ;;
+    *linux*   ) ls_options="$ls_options -k -q" ;;
+esac
+if [[ -n $term_colors && $term_colors -ge 8 ]]; then
     case $OSTYPE in
-        *freebsd* ) CLICOLOR_FORCE=1 command ls -k -q -G ${1+"$@"} | $PAGER -X -E ;;
-        *linux*   ) command ls -k -q --color=always ${1+"$@"} | $PAGER -X -E ;;
-        *         ) command ls ${1+"$@"} | $PAGER -X -E ;;
+        *freebsd* )
+            export LSCOLORS="ExcxcxcxbxcxcxbxbxExEx"
+            export CLICOLOR_FORCE=1
+            ls_options="$ls_options -G"
+            ls_pager="$ls_pager -r"
+            ;;
+        *linux* )
+            export LS_COLORS="no=00:fi=00:rs=00:di=01;34:ln=00;32:mh=00;32:or=37;42:mi=37;42:pi=00;32:so=00;32:do=00;32:bd=00;32:cd=00;32:su=00;31:sg=00;31:ex=00;31:ca=00:tw=00:ow=00:st=00:"
+            ls_options="$ls_options --color=always"
+            ls_pager="$ls_pager -r"
+            ;;
     esac
+fi
+ls () {
+    ls_options_extra=""
+    case $OSTYPE in
+        *freebsd* ) ls_options_extra="-C" ;;
+        *linux*   ) ls_options_extra="-C" ;;
+    esac
+    command ls $ls_options $ls_options_extra ${1+"$@"} | $ls_pager
 }
-alias ll="ls -l"
-alias la="ls -la"
+ll () {
+    command ls $ls_options -l ${1+"$@"} | $ls_pager
+}
+la () {
+    command ls $ls_options -l -a ${1+"$@"} | $ls_pager
+}
 
 #   provide tmux(1) wrapper command
 tmux-session () {
