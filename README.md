@@ -8,8 +8,8 @@ Abstract
 
 This is a very small collection of really essential Unix "dot-files"
 (`~/.xxx`), i.e., opinionated configuration files for the shell
-environment of a Unix user. This environment is based on the following
-absolutely essential tools:
+environments of Ralf S. Engelschall. The Unix environment is based on the
+following absolutely essential tools:
 
 - the [GNU Bash](https://www.gnu.org/software/bash/) shell environment
 - the [TMux](https://tmux.github.io/) terminal multiplexer
@@ -65,6 +65,6 @@ to `~/.bash-envrc.rc`.
 License
 -------
 
-Copyright (c) 1995-2019 [Ralf S. Engelschall](mailto:rse@engelschall.com).<br/>
+Copyright (c) 1995-2019 [Dr. Ralf S. Engelschall](mailto:rse@engelschall.com).<br/>
 Distributed under [MIT](https://opensource.org/licenses/MIT) license.
 
