@@ -52,7 +52,7 @@ installfile () {
     if [ $quiet = no ]; then
         echo "dotfiles: installing \"$dstdir/$dstfile\": $desc"
     fi
-    dstpath="$dstdir/$dstfile"
+    dstpath=`dirname "$dstdir/$dstfile"`
     if [ ! -d "$dstpath" ]; then
         mkdir -p "$dstpath"
     fi
