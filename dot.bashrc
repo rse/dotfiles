@@ -11,9 +11,9 @@ export LC_CTYPE="en_US.UTF-8"
 term_colors=$(tput colors 2>/dev/null)
 if [[ -n $term_colors && $term_colors -ge 8 ]]; then
     #   determine terminal color sequences
-    ps1_col_bl=$(tput setaf 4)
-    ps1_col_rd=$(tput setaf 1)
-    ps1_col_no=$(tput sgr0)
+    ps1_col_bl=$'\e[34m'
+    ps1_col_rd=$'\e[31m'
+    ps1_col_no=$'\e[0m'
 else
     #   fallback to no coloring
     ps1_col_bl=""
