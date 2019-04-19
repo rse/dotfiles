@@ -149,10 +149,9 @@ set autoindent
 set smartindent
 set tabstop=4
 
-"   do incremental search with smart case sensitivity and highlighting behavior
+"   do incremental search with smart case sensitivity
 set incsearch
 set smartcase
-set hlsearch
 
 "	make "Y" analogous to "C" and "D" for better orthogonality
 map Y y$
