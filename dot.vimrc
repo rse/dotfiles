@@ -152,14 +152,14 @@ set tabstop=4
 "   do incremental search with smart case sensitivity and highlighting behavior
 set incsearch
 set smartcase
-"set hlsearch
+set hlsearch
 
 "	make "Y" analogous to "C" and "D" for better orthogonality
 map Y y$
 
 "   backward compatibility to some smarter Vim 4.x keystrokes
-:noremap Q gq
-:noremap gQ Q
+noremap Q gq
+noremap gQ Q
 
 "   CTLR-] is nearly impossible on german keyboards
 map gt <C-]>
@@ -206,5 +206,7 @@ highlight htmlBold   ctermbg=None      ctermfg=DarkRed   cterm=Bold
 "   ==== LOCAL CONFIGURATION ================================================
 
 "   include optional local configuration
-runtime! ~/.dotfiles/vimrc
+if filereadable(expand("~/.dotfiles/vimrc"))
+    source ~/.dotfiles/vimrc
+endif
 
