@@ -203,3 +203,8 @@ highlight DiffText   ctermbg=Yellow    ctermfg=DarkRed   cterm=Bold
 highlight htmlItalic ctermbg=None      ctermfg=DarkRed   cterm=None
 highlight htmlBold   ctermbg=None      ctermfg=DarkRed   cterm=Bold
 
+"   ==== LOCAL CONFIGURATION ================================================
+
+"   include optional local configuration
+runtime! ~/.dotfiles/vimrc
+

@@ -140,3 +140,7 @@
     new                = checkout -b
     del                = reset HEAD
 
+#   include optional local configuration
+[include]
+    path = ~/.dotfiles/gitconfig
+

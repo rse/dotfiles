@@ -137,8 +137,8 @@ if [[ -f ~/.bash-envrc.rc ]]; then
     envrc switch -i "$HOME"
 fi
 
-#   optionally enable local settings
-if [[ -f ~/.bash-local.rc ]]; then
-    source ~/.bash-local.rc
+#   include optional local configuration
+if [[ -f ~/.dotfiles/bashrc ]]; then
+    source ~/.dotfiles/bashrc
 fi
 

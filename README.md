@@ -48,6 +48,19 @@ Ensure that the essential Unix commands bash(1), tmux(1), less(1),
 vim(1), vifm(1) and git(1) are available on your system. If not, install
 them with your preferred Unix software packaging mechanism.
 
+Local Override Configurations
+-----------------------------
+
+You can easily override the configuration with the following optional files
+(which are automatically included) without having to edit the original files:
+
+- `~/.dotfiles/bashrc`    (for overriding `~/.bashrc`)
+- `~/.dotfiles/inputrc`   (for overriding `~/.inputrc`)
+- `~/.dotfiles/tmux.conf` (for overriding `~/.tmux.conf`)
+- `~/.dotfiles/vimrc`     (for overriding `~/.vimrc`)
+- `~/.dotfiles/vifmrc`    (for overriding `~/.vifm/vifmrc`)
+- `~/.dotfiles/gitconfig` (for overriding `~/.gitconfig`)
+
 Hint
 ----
 

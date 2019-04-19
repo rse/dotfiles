@@ -33,3 +33,6 @@ set mark-symlinked-directories on
 "\C-ap": shell-backward-word
 "\C-an": shell-forward-word
 
+#   include optional local configuration
+$include ~/.dotfiles/inputrc
+

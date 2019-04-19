@@ -111,3 +111,8 @@ highlight ErrorMsg   cterm=none    ctermfg=white ctermbg=red
 highlight SuggestBox cterm=none    ctermfg=white ctermbg=red
 highlight WildMenu   cterm=none    ctermfg=white ctermbg=red
 
+"   ==== Local Configuration ====
+
+"   include optional local configuration
+source ~/.dotfiles/vifmrc
+
