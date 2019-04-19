@@ -35,32 +35,38 @@ dstdir="$1"
 
 #   helper command
 installfile () {
-    name="$1"
-    desc="$2"
-    if [ -f "$dstdir/.$name" ]; then
+    srcfile="$1"
+    dstfile="$2"
+    desc="$3"
+    if [ -f "$dstdir/$dstfile" ]; then
         if [ $force = no ]; then
-            echo "dotfiles: ERROR: pre-existing \"$dstdir/.$name\" -- remove first (or use option --force)" 1>&2
+            echo "dotfiles: ERROR: pre-existing \"$dstdir/$dstfile\" -- remove first (or use option --force)" 1>&2
             exit 1
         else
             if [ $quiet = no ]; then
-                echo "dotfiles: pre-existing \"$dstdir/.$name\" -- preserved as \"$dstdir/.$name.old\"" 1>&2
+                echo "dotfiles: pre-existing \"$dstdir/$dstfile\" -- preserved as \"$dstdir/$dstfile.old\"" 1>&2
             fi
-            mv "$dstdir/.$name" "$dstdir/.$name.old"
+            mv "$dstdir/$dstfile" "$dstdir/$dstfile.old"
         fi
     fi
     if [ $quiet = no ]; then
-        echo "dotfiles: installing \"$dstdir/.$name\": $desc"
+        echo "dotfiles: installing \"$dstdir/$dstfile\": $desc"
     fi
-    cp "$srcdir/dot.$name" "$dstdir/.$name"
-    chmod 644 "$dstdir/.$name"
+    dstpath="$dstdir/$dstfile"
+    if [ ! -d "$dstpath" ]; then
+        mkdir -p "$dstpath"
+    fi
+    cp "$srcdir/$srcfile" "$dstdir/$dstfile"
+    chmod 644 "$dstdir/$dstfile"
 }
 
 #   install all dot files
-installfile bash_login  "bash(1) login-hook script"
-installfile bash_logout "bash(1) logout-hook script"
-installfile bashrc      "bash(1) run-command script"
-installfile inputrc     "bash(1) readline configuration"
-installfile tmux.conf   "tmux(1) configuration"
-installfile vimrc       "vim(1) configuration"
-installfile gitconfig   "git(1) configuration"
+installfile dot.bash_login  .bash_login  "bash(1) login-hook script"
+installfile dot.bash_logout .bash_logout "bash(1) logout-hook script"
+installfile dot.bashrc      .bashrc      "bash(1) run-command script"
+installfile dot.inputrc     .inputrc     "bash(1) readline configuration"
+installfile dot.tmux.conf   .tmux.conf   "tmux(1) configuration"
+installfile dot.vimrc       .vimrc       "vim(1) configuration"
+installfile dot.vifmrc      .vifm/vifmrc "vifm(1) configuration"
+installfile dot.gitconfig   .gitconfig   "git(1) configuration"
 

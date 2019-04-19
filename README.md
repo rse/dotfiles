@@ -6,14 +6,19 @@ Essential Unix Dot-Files
 Abstract
 --------
 
-This is a very small collection of really essential Unix "dot-files" (`~/.xxx`), i.e.,
-opinionated configuration files for the shell environment of a Unix user. This environment is based
-on the absolutely essential [GNU Bash](https://www.gnu.org/software/bash/) shell environment,
-the [TMux](https://tmux.github.io/) terminal multiplexer, the file pager
-[Less](http://www.greenwoodsoftware.com/less/), the
-[Vim](http://www.vim.org/) file editor and the
-[Git](https://git-scm.com/) distributed version control system. The
-intention is not an extensive feature configuration, but the bare
+This is a very small collection of really essential Unix "dot-files"
+(`~/.xxx`), i.e., opinionated configuration files for the shell
+environment of a Unix user. This environment is based on the following
+absolutely essential tools:
+
+- the [GNU Bash](https://www.gnu.org/software/bash/) shell environment
+- the [TMux](https://tmux.github.io/) terminal multiplexer
+- the [Less](http://www.greenwoodsoftware.com/less/) file pager
+- the [Vim](http://www.vim.org/) file editor
+- the [Vifm](https://vifm.info/) file manager
+- the [Git](https://git-scm.com/) version control system
+
+The intention is not an extensive feature configuration, but the bare
 minimum of an opinionated pre-configuration.
 
 Overview
@@ -27,6 +32,7 @@ The particular Unix "dot-files" are:
 - [dot.inputrc](./dot.inputrc) (`~/.inputrc`): bash(1) readline configuration
 - [dot.tmux.conf](./dot.tmux.conf) (`~/.tmux.conf`): tmux(1) configuration
 - [dot.vimrc](./dot.vimrc) (`~/.vimrc`): vim(1) configuration
+- [dot.vifmrc](./dot.vifmrc) (`~/.vifm/vifmrc`): vifm(1) configuration
 - [dot.gitconfig](./dot.gitconfig) (`~/.gitconfig`): git(1) configuration
 
 Installation
@@ -39,8 +45,8 @@ $ make install [DESTDIR=<dir>] [prefix=<dir>] [datadir=<dir>]
 ```
 
 Ensure that the essential Unix commands bash(1), tmux(1), less(1),
-vim(1) and git(1) are available on your system. If not, install them
-with your preferred Unix software packaging mechanism.
+vim(1), vifm(1) and git(1) are available on your system. If not, install
+them with your preferred Unix software packaging mechanism.
 
 Hint
 ----

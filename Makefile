@@ -19,5 +19,6 @@ install:
 	./shtool install -c -m 644 dot.inputrc     $(DESTDIR)$(datadir)
 	./shtool install -c -m 644 dot.tmux.conf   $(DESTDIR)$(datadir)
 	./shtool install -c -m 644 dot.vimrc       $(DESTDIR)$(datadir)
+	./shtool install -c -m 644 dot.vifmrc      $(DESTDIR)$(datadir)
 	./shtool install -c -m 644 dot.gitconfig   $(DESTDIR)$(datadir)
 
