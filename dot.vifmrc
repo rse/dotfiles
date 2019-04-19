@@ -1,0 +1,113 @@
+"##
+"## ~/.vifm/vifmrc -- vifm(1) configuration
+"## Copyright (c) 1995-2019 Dr. Ralf S. Engelschall <rse@engelschall.com>
+"## Distributed under MIT <https://opensource.org/licenses/MIT> license.
+"##
+
+"   ==== Standard Configuration ====
+
+set vicmd=$EDITOR
+
+set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+    \phistory,fhistory,dirstack,registers,bookmarks,bmarks
+
+set wildmenu
+set wildstyle=bar
+
+set viewcolumns=-{name}..
+set sizefmt=units:iec,precision:1
+set statusline="  %t%= %A %8u:%-8g %7s %20d  "
+set timefmt=%Y-%m-%d\ %H:%M:%S
+
+set norunexec
+set trash
+set history=100
+set followlinks
+set sortnumbers
+set undolevels=100
+set novimhelp
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set scrolloff=4
+
+"   ==== Default Bookmarks ====
+
+mark h ~/
+
+"   ==== Custom Commands ====
+
+command! df    df -h %m 2> /dev/null
+command! make  make %a %m
+command! diff  vim -d %f %F
+command! vgrep vim "+grep %a"
+command! zip   zip -r %f.zip %f
+command! exec  !! ./%f
+
+"   ==== Custom Viewers ====
+
+fileviewer *.tar.gz,*.tgz   tar -tzf %c
+fileviewer *.tar.bz2,*.tbz2 tar -tzf %c
+fileviewer *.tar.xz,*.txz   tar -tzf %c
+fileviewer *.tar            tar -tf  %c
+
+"   ==== Open In Environment ====
+
+nnoremap o :!open %f<cr>
+if executable('xdg-open')
+    nnoremap o :!xdg-open %f<cr>
+endif
+if executable('wsl-open')
+    nnoremap o :!wsl-open %f<cr>
+endif
+
+"   ==== Custom Keystrokes ====
+
+nnoremap r    cw
+nnoremap e    :edit<cr>
+nnoremap s    :shell<cr>
+nnoremap S    :sort<cr>
+nnoremap w    :view<cr>
+vnoremap w    :view<cr>gv
+nnoremap x    :move<cr>
+nnoremap <f2> :rename<cr>
+nnoremap <f3> :!less %f<cr>
+nnoremap <f4> :edit<cr>
+nnoremap <f5> :copy<cr>
+nnoremap <f6> :move<cr>
+nnoremap <f7> :mkdir<space>
+nnoremap <f8> :delete<cr>
+
+"   ==== Embedded Color Scheme ====
+
+highlight clear
+
+highlight Win        cterm=none    ctermfg=none  ctermbg=none
+highlight AuxWin     cterm=none    ctermfg=none  ctermbg=none
+highlight Border     cterm=none    ctermfg=none  ctermbg=none
+
+highlight Directory  cterm=bold    ctermfg=blue  ctermbg=none
+highlight Link       cterm=none    ctermfg=green ctermbg=none
+highlight BrokenLink cterm=none    ctermfg=red   ctermbg=none
+highlight Socket     cterm=none    ctermfg=green ctermbg=none
+highlight Device     cterm=none    ctermfg=green ctermbg=none
+highlight Fifo       cterm=none    ctermfg=green ctermbg=none
+highlight Executable cterm=none    ctermfg=red   ctermbg=none
+
+highlight CurrLine   cterm=reverse ctermfg=blue  ctermbg=none
+highlight OtherLine  cterm=reverse ctermfg=black ctermbg=none
+highlight Selected   cterm=none    ctermfg=black ctermbg=white
+
+highlight TopLine    cterm=none    ctermfg=black ctermbg=none
+highlight TopLineSel cterm=bold    ctermfg=blue  ctermbg=none
+highlight TabLine    cterm=reverse ctermfg=none  ctermbg=none
+highlight TabLineSel cterm=reverse ctermfg=red   ctermbg=none
+highlight StatusLine cterm=reverse ctermfg=none  ctermbg=none
+highlight CmdLine    cterm=none    ctermfg=none  ctermbg=none
+
+highlight ErrorMsg   cterm=none    ctermfg=white ctermbg=red
+highlight SuggestBox cterm=none    ctermfg=white ctermbg=red
+highlight WildMenu   cterm=none    ctermfg=white ctermbg=red
+
