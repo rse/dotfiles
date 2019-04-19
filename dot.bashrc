@@ -1,6 +1,6 @@
 ##
 ##  ~/.bashrc -- bash(1) run-command script
-##  Copyright (c) 1995-2019 Ralf S. Engelschall <rse@engelschall.com>
+##  Copyright (c) 1995-2019 Dr. Ralf S. Engelschall <rse@engelschall.com>
 ##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
 ##
 
