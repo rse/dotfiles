@@ -79,7 +79,7 @@ installfile () {
         target_exec mkdir -p "$dstpath"
     fi
     target_cp "$srcdir/$srcfile" "$dstdir/$dstfile"
-    target_exec chmod 644 "$dstdir/$dstfile"
+    target_exec chmod 444 "$dstdir/$dstfile"
 }
 installfile dot.bash_login  .bash_login  "bash(1) login-hook script"
 installfile dot.bash_logout .bash_logout "bash(1) logout-hook script"
@@ -101,6 +101,7 @@ provideempty () {
         if [ $quiet = no ]; then
             echo "dotfiles: providing empty \"$dstdir/.dotfiles/$dstfile\": $desc"
             target_cp $tmpfile "$dstdir/.dotfiles/$dstfile"
+            target_exec chmod 644 "$dstdir/.dotfiles/$dstfile"
         fi
     fi
 }
