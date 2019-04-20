@@ -6,10 +6,10 @@ Essential Unix Dot-Files
 Abstract
 --------
 
-This is a very small collection of really essential Unix "dot-files"
-(`~/.xxx`), i.e., opinionated configuration files for the shell
-environments of Ralf S. Engelschall. The Unix environment is based on the
-following absolutely essential tools:
+This is a small collection of really essential Unix "dot-files"
+(`~/.xxx`), i.e., opinionated configuration files for the Unix shell
+environments of Ralf S. Engelschall under FreeBSD, Linux and macOS. This
+Unix environment is based on the following absolutely essential tools:
 
 - the [GNU Bash](https://www.gnu.org/software/bash/) shell environment
 - the [TMux](https://tmux.github.io/) terminal multiplexer
@@ -18,8 +18,9 @@ following absolutely essential tools:
 - the [Vifm](https://vifm.info/) file manager
 - the [Git](https://git-scm.com/) version control system
 
-The intention is not an extensive feature configuration, but the bare
-minimum of an opinionated pre-configuration.
+The intention of these "dot-files" is not to be an extensive tool
+feature configuration, but to be the bare minimum of an opinionated tool
+standard configuration.
 
 Overview
 --------
@@ -38,21 +39,41 @@ The particular Unix "dot-files" are:
 Installation
 ------------
 
-You can install the package with:
+You can install the package into your system with:
 
 ```
-$ make install [DESTDIR=<dir>] [prefix=<dir>] [datadir=<dir>]
+$ make install [DESTDIR=<dir>] [prefix=<dir>] [bindir=<dir>] [datadir=<dir>]
 ```
 
-Ensure that the essential Unix commands bash(1), tmux(1), less(1),
-vim(1), vifm(1) and git(1) are available on your system. If not, install
-them with your preferred Unix software packaging mechanism.
+You can install the "dot-files" into the home-directory `<dir>` of an
+account (either locally or remotely via SSH) with:
+
+```
+$ dotfiles [-q|--quiet] [-f|--force] [-p|--preserve] [-r|--remote <user>@<host>] <dir>
+```
+
+Additionally, ensure that the essential Unix commands bash(1), tmux(1),
+less(1), vim(1), vifm(1) and git(1) are available in `$PATH` of the
+using account. If not, install them into your system with your preferred
+Unix software packaging mechanism:
+
+- Debian/Ubuntu [Apt]:<br/>
+  `$ apt-get install bash tmux less vim vifm git`
+
+- FreeBSD [pkg]:<br/>
+  `$ pkg install bash tmux less vim vifm git`
+
+- macOS [MacPorts]:<br/>
+  `$ port install bash tmux less vim vifm git`
+
+- Unix [OpenPKG]:<br/>
+  `$ openpkg build bash tmux less vim vifm git | sh`
 
 Local Override Configurations
 -----------------------------
 
-You can easily override the configuration with the following optional files
-(which are automatically included) without having to edit the original files:
+You can easily override the configuration with the following optional
+files (which are automatically included and pre-generated):
 
 - `~/.dotfiles/bashrc`    (for overriding `~/.bashrc`)
 - `~/.dotfiles/inputrc`   (for overriding `~/.inputrc`)
