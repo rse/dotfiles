@@ -1,0 +1,25 @@
+##
+##  ~/.ssh/config -- ssh(1) configuration
+##  Copyright (c) 1995-2019 Dr. Ralf S. Engelschall <rse@engelschall.com>
+##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
+##
+
+#   include local configuration
+#   (has to be first, as SSH uses "first match" semantics)
+Include ~/.dotfiles/sshconfig
+
+#   configure local host
+Host localhost 127.0.0.1
+    Compression                        no
+    ForwardAgent                       yes
+    CheckHostIP                        no
+
+#   configure foreign hosts
+Host *
+    Compression                        yes
+    ForwardAgent                       no
+    CheckHostIP                        yes
+    HostKeyAlgorithms                  +ssh-dss
+    ConnectionAttempts                 2
+    NumberOfPasswordPrompts            2
+

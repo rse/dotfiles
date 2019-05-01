@@ -17,6 +17,7 @@ Unix environment is based on the following absolutely essential tools:
 - the [Vim](http://www.vim.org/) file editor
 - the [Vifm](https://vifm.info/) file manager
 - the [Git](https://git-scm.com/) version control system
+- the [OpenSSH](http://www.openssh.com/) remote access facility
 
 The intention of these "dot-files" is not to be an extensive tool
 feature configuration, but to be the bare minimum of an opinionated tool
@@ -35,6 +36,7 @@ The particular Unix "dot-files" are:
 - [dot.vimrc](./dot.vimrc) (`~/.vimrc`): vim(1) configuration
 - [dot.vifmrc](./dot.vifmrc) (`~/.vifm/vifmrc`): vifm(1) configuration
 - [dot.gitconfig](./dot.gitconfig) (`~/.gitconfig`): git(1) configuration
+- [dot.sshconfig](./dot.sshconfig) (`~/.ssh/config`): ssh(1) configuration
 
 Installation
 ------------
@@ -58,16 +60,16 @@ using account. If not, install them into your system with your preferred
 Unix software packaging mechanism:
 
 - Debian/Ubuntu [Apt]:<br/>
-  `$ apt-get install bash tmux less vim vifm git`
+  `$ apt-get install bash tmux less vim vifm git openssh-client`
 
 - FreeBSD [pkg]:<br/>
-  `$ pkg install bash tmux less vim vifm git`
+  `$ pkg install bash tmux less vim vifm git openssh-portable`
 
 - macOS [MacPorts]:<br/>
-  `$ port install bash tmux less vim vifm git`
+  `$ port install bash tmux less vim vifm git openssh`
 
 - Unix [OpenPKG]:<br/>
-  `$ openpkg build bash tmux less vim vifm git | sh`
+  `$ openpkg build bash tmux less vim vifm git openssh | sh`
 
 Local Override Configurations
 -----------------------------
@@ -81,6 +83,7 @@ files (which are automatically included and pre-generated):
 - `~/.dotfiles/vimrc`     (for overriding `~/.vimrc`)
 - `~/.dotfiles/vifmrc`    (for overriding `~/.vifm/vifmrc`)
 - `~/.dotfiles/gitconfig` (for overriding `~/.gitconfig`)
+- `~/.dotfiles/sshconfig` (for overriding `~/.ssh/config`)
 
 Hint
 ----
