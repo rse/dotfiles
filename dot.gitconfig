@@ -111,8 +111,9 @@
     revert-all         = reset --hard HEAD
 
     #   working with commits
-    #   (amend the last commit and undo the last commit)
-    amend              = commit -a --amend
+    #   (extend content or amend the message of last commit and undo the last commit)
+    extend             = commit --amend --no-edit -a
+    amend              = commit --amend
     undo               = reset --soft HEAD^
     undo-hard          = reset --hard HEAD^
 
