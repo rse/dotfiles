@@ -38,6 +38,15 @@ export PAGER="less"
 export PAGER_FLAGS=""
 alias more="less"
 
+#   locate temporary directory
+for __tmpdir in "$HOME/tmp" /tmp /var/tmp; do
+    if [[ -d "$__tmpdir" && -w "$__tmpdir" ]]; then
+        TMPDIR="$__tmpdir"
+        break
+    fi
+done
+unset __tmpdir
+
 #   customize filesystem handling
 umask 022
 shopt -s autocd
