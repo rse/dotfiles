@@ -68,6 +68,8 @@ installfile () {
                     echo "dotfiles: pre-existing \"$dstdir/$dstfile\" -- preserved as \"$dstdir/$dstfile.old\"" 1>&2
                 fi
                 target_exec mv "$dstdir/$dstfile" "$dstdir/$dstfile.old"
+            else
+                target_exec chmod 644 "$dstdir/$dstfile"
             fi
         fi
     fi
@@ -89,6 +91,7 @@ installfile dot.tmux.conf   .tmux.conf   "tmux(1) configuration"
 installfile dot.vimrc       .vimrc       "vim(1) configuration"
 installfile dot.vifmrc      .vifm/vifmrc "vifm(1) configuration"
 installfile dot.gitconfig   .gitconfig   "git(1) configuration"
+installfile dot.sshconfig   .ssh/config  "ssh(1) configuration"
 
 #   provide empty override files
 tmpfile="${TMPDIR-/tmp}/dotfiles.tmp.$$"
@@ -114,5 +117,6 @@ provideempty tmux.conf "tmux(1) configuration override"
 provideempty vimrc     "vim(1) configuration override"
 provideempty vifmrc    "vifmrc(1) configuration override"
 provideempty gitconfig "git(1) configuration override"
+provideempty sshconfig "ssh(1) configuration override"
 rm -f $tmpfile
 
