@@ -1,7 +1,9 @@
 ##
-##  ~/.bash_logout -- bash(1) logout run-command script
+##  dotfiles -- Essential Unix Dot-Files
 ##  Copyright (c) 1995-2019 Dr. Ralf S. Engelschall <rse@engelschall.com>
 ##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
+##
+##  ~/.bash_logout: bash(1) logout run-command script
 ##
 
 #   increase privacy on outmost shell exit

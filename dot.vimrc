@@ -1,7 +1,9 @@
 "##
-"## ~/.vimrc -- vim(1) configuration
+"## dotfiles -- Essential Unix Dot-Files
 "## Copyright (c) 1995-2019 Dr. Ralf S. Engelschall <rse@engelschall.com>
 "## Distributed under MIT <https://opensource.org/licenses/MIT> license.
+"##
+"## ~/.vimrc: vim(1) configuration
 "##
 
 "   we require Vim and do not have to be Vi compatible

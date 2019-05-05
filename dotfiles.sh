@@ -4,32 +4,41 @@
 ##  Copyright (c) 1995-2019 Dr. Ralf S. Engelschall <rse@engelschall.com>
 ##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
 ##
+##  dotfiles: sh(1) based deployment utility
+##
 
 #   configuration
+versionstr="@version@"
 srcdir="@datadir@"
 
 #   command-line argument parsing
 usage () {
-    echo "dotfiles: USAGE: dotfiles [-q|--quiet] [-f|--force] [-p|--preserve] [-r|--remote <user>@<host>] <home-directory>" 1>&2
+    echo "dotfiles: USAGE: dotfiles [-v|--version] [-q|--quiet] [-f|--force] [-p|--preserve] [-r|--remote <user>@<host>] <home-directory>" 1>&2
 }
 if [ $# -eq 0 ]; then
     echo "dotfiles: ERROR: invalid number of arguments" 1>&2
     usage
     exit 1
 fi
+version=no
 quiet=no
 force=no
 preserve=no
 remote=""
 while [ $# -gt 0 ]; do
     case "$1" in
-        -q|--quiet    ) quiet=yes; shift ;;
-        -f|--force    ) force=yes; shift ;;
-        -p|--preserve ) preserve=yes; shift ;;
+        -v|--version  ) version=yes;      shift ;;
+        -q|--quiet    ) quiet=yes;        shift ;;
+        -f|--force    ) force=yes;        shift ;;
+        -p|--preserve ) preserve=yes;     shift ;;
         -r|--remote   ) shift; remote=$1; shift ;;
         * ) break ;;
     esac
 done
+if [ $version = yes ]; then
+    echo "$versionstr"
+    exit 0
+fi
 if [ $# -ne 1 ]; then
     echo "dotfiles: ERROR: invalid number of arguments" 1>&2
     usage

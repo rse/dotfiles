@@ -1,7 +1,9 @@
 ##
-##  ~/.bashrc -- bash(1) run-command script
+##  dotfiles -- Essential Unix Dot-Files
 ##  Copyright (c) 1995-2019 Dr. Ralf S. Engelschall <rse@engelschall.com>
 ##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
+##
+##  ~/.bashrc: bash(1) run-command script
 ##
 
 #   enforce UTF-8 locale

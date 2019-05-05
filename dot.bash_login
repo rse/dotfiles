@@ -1,7 +1,9 @@
 ##
-##  ~/.bash_login -- bash(1) login run-command script
+##  dotfiles -- Essential Unix Dot-Files
 ##  Copyright (c) 1995-2019 Dr. Ralf S. Engelschall <rse@engelschall.com>
 ##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
+##
+##  ~/.bash_login: bash(1) login run-command script
 ##
 
 source ~/.bashrc
