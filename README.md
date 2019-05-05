@@ -13,10 +13,10 @@ Unix environment is based on the following absolutely essential tools:
 - the [GNU Bash](https://www.gnu.org/software/bash/) shell environment
 - the [TMux](https://tmux.github.io/) terminal multiplexer
 - the [Less](http://www.greenwoodsoftware.com/less/) file pager
-- the [Vim](http://www.vim.org/) file editor
+- the [Vim](https://www.vim.org/) file editor
 - the [Vifm](https://vifm.info/) file manager
 - the [Git](https://git-scm.com/) version control system
-- the [OpenSSH](http://www.openssh.com/) remote access facility
+- the [OpenSSH](https://www.openssh.com/) remote access facility
 
 The intention of these "dot-files" is not to be an extensive tool
 feature configuration, but to be the bare minimum of an opinionated tool
