@@ -69,7 +69,7 @@ HISTSIZE=1000
 HISTFILESIZE=1000
 HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S  "
-HISTCONTROL="erasedups:ignoreboth"
+HISTCONTROL="erasedups:ignoredups:ignorespace"
 PROMPT_COMMAND="history -a"
 
 #   customize ls(1) command
