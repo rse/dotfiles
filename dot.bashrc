@@ -145,7 +145,9 @@ fi
 #   optionally enable ENVRC functionality
 if [[ -f ~/.bash-envrc.rc ]]; then
     source ~/.bash-envrc.rc
-    envrc switch -i "$HOME"
+    if type -t envrc >/dev/null; then
+        envrc switch -i "$HOME"
+    fi
 fi
 
 #   include optional local configuration
