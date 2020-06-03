@@ -1,6 +1,6 @@
 ##
 ##  Makefile -- make(1) procedure
-##  Copyright (c) 1995-2019 Dr. Ralf S. Engelschall <rse@engelschall.com>
+##  Copyright (c) 1995-2020 Dr. Ralf S. Engelschall <rse@engelschall.com>
 ##  Distributed under MIT <https://opensource.org/licenses/MIT> license.
 ##
 

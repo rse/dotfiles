@@ -101,6 +101,6 @@ to `~/.bash-envrc.rc`.
 License
 -------
 
-Copyright (c) 1995-2019 [Dr. Ralf S. Engelschall](mailto:rse@engelschall.com).<br/>
+Copyright &copy; 1995-2020 [Dr. Ralf S. Engelschall](mailto:rse@engelschall.com).<br/>
 Distributed under [MIT](https://opensource.org/licenses/MIT) license.
 
