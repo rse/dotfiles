@@ -35,6 +35,9 @@
     ui                 = true
 
 [color "diff"]
+    meta               = bold
+    frag               = bold
+    commit             = bold
     old                = red
     new                = blue
     whitespace         = yellow reverse
