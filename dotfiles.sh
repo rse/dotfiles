@@ -14,7 +14,7 @@ srcdir="@datadir@"
 #   command-line argument parsing
 usage () {
     echo "dotfiles: USAGE: dotfiles [-v|--version] [-q|--quiet] [-f|--force] [-p|--preserve] [-r|--remote <user>@<host>] <home-directory>" 1>&2
-    echo "                 dotfiles -e [<file>...]" 1>&2
+    echo "                 dotfiles -e|--edit [<file>...]" 1>&2
 }
 if [ $# -eq 0 ]; then
     usage
