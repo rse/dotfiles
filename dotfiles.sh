@@ -24,6 +24,7 @@ version=no
 quiet=no
 force=no
 preserve=no
+edit=no
 remote=""
 while [ $# -gt 0 ]; do
     case "$1" in
