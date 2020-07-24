@@ -29,6 +29,15 @@ PROMPT_DIRTRIM=11
 PS1="${ps1_col_bl}\\u@\\h${ps1_col_no}:${ps1_col_rd}\${PWD}${ps1_col_no}\n\\\$ "
 PS2="> "
 
+#   indicate if last command returned an error exit code
+_check_exit_code () {
+    local code=$?
+    if [[ $code -gt 0 && $code -lt 126 ]]; then
+        echo "-bash: ${ps1_col_rd}WARNING${ps1_col_no}: last command terminated with error exit code ${ps1_col_bl}${code}${ps1_col_no}"
+    fi
+}
+PROMPT_COMMAND="_check_exit_code"
+
 #   perform shell window size checking
 if expr $- : ".*i.*" >/dev/null; then
     shopt -s checkwinsize
@@ -70,7 +79,7 @@ HISTFILESIZE=1000
 HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S  "
 HISTCONTROL="erasedups:ignoredups:ignorespace"
-PROMPT_COMMAND="history -a"
+PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
 
 #   customize ls(1) command
 ls_options=""
