@@ -10,30 +10,30 @@
 export LC_CTYPE="en_US.UTF-8"
 
 #   determine terminal colors
-term_colors=$(tput colors 2>/dev/null)
-if [[ -n $term_colors && $term_colors -ge 8 ]]; then
+_term_colors=$(tput colors 2>/dev/null)
+if [[ -n $_term_colors && $_term_colors -ge 8 ]]; then
     #   determine terminal color sequences
-    ps1_col_bl=$'\e[34m'
-    ps1_col_rd=$'\e[31m'
-    ps1_col_no=$'\e[0m'
+    _col_bl=$'\e[34m'
+    _col_rd=$'\e[31m'
+    _col_no=$'\e[0m'
 else
     #   fallback to no coloring
-    ps1_col_bl=""
-    ps1_col_rd=""
-    ps1_col_no=""
+    _col_bl=""
+    _col_rd=""
+    _col_no=""
 fi
 
 #   customize interactive prompt
 shopt -s promptvars
 PROMPT_DIRTRIM=11
-PS1="${ps1_col_bl}\\u@\\h${ps1_col_no}:${ps1_col_rd}\${PWD}${ps1_col_no}\n\\\$ "
+PS1="${_col_bl}\\u@\\h${_col_no}:${_col_rd}\${PWD}${_col_no}\n\\\$ "
 PS2="> "
 
 #   indicate if last command returned an error exit code
 _check_exit_code () {
     local code=$?
     if [[ $code -gt 0 && $code -lt 126 ]]; then
-        echo "-bash: ${ps1_col_rd}WARNING${ps1_col_no}: last command terminated with error exit code ${ps1_col_bl}${code}${ps1_col_no}"
+        echo "-bash: ${_col_rd}WARNING${_col_no}: last command terminated with error exit code ${_col_bl}${code}${_col_no}"
     fi
 }
 PROMPT_COMMAND="_check_exit_code"
@@ -88,7 +88,7 @@ case $OSTYPE in
     *freebsd* ) ls_options="$ls_options -k -q" ;;
     *linux*   ) ls_options="$ls_options -k -q" ;;
 esac
-if [[ -n $term_colors && $term_colors -ge 8 ]]; then
+if [[ -n $_term_colors && $_term_colors -ge 8 ]]; then
     case $OSTYPE in
         *freebsd* )
             export LSCOLORS="ExcxcxcxbxcxcxbxbxExEx"
@@ -120,11 +120,10 @@ la () {
 
 #   provide tmux(1) wrapper command
 tmux-session () {
+    local session=default
     if [[ $# -ge 1 ]]; then
         session="$1"
         shift
-    else
-        session=default
     fi
     tmux new-session -A -s "$session" "$@"
 }
