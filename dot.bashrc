@@ -57,6 +57,9 @@ for __tmpdir in "$HOME/tmp" /tmp /var/tmp; do
     fi
 done
 unset __tmpdir
+if [[ -z ${XDG_RUNTIME_DIR+x} ]]; then
+    export XDG_RUNTIME_DIR=$TMPDIR
+fi
 
 #   customize filesystem handling
 umask 022
