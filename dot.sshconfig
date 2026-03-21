@@ -21,7 +21,6 @@ Host *
     Compression                        yes
     ForwardAgent                       no
     CheckHostIP                        yes
-    HostKeyAlgorithms                  +ssh-dss
     ConnectionAttempts                 2
     NumberOfPasswordPrompts            2
 
