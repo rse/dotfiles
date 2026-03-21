@@ -15,18 +15,20 @@ if [[ -n $_term_colors && $_term_colors -ge 8 ]]; then
     #   determine terminal color sequences
     _col_bl=$'\e[34m'
     _col_rd=$'\e[31m'
+    _col_gr=$'\e[37m'
     _col_no=$'\e[0m'
 else
     #   fallback to no coloring
     _col_bl=""
     _col_rd=""
+    _col_gr=""
     _col_no=""
 fi
 
 #   customize interactive prompt
 shopt -s promptvars
 PROMPT_DIRTRIM=11
-PS1="${_col_bl}\\u@\\h${_col_no}:${_col_rd}\${PWD}${_col_no}\n\\\$ "
+PS1="${_col_gr}╭─┈${_col_no} ${_col_bl}\\u@\\h${_col_no}:${_col_rd}\${PWD}${_col_no}\n${_col_gr}╰─▶${_col_no} "
 PS2="> "
 
 #   indicate if last command returned an error exit code
