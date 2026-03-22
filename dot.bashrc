@@ -28,7 +28,7 @@ fi
 #   customize interactive prompt
 shopt -s promptvars
 PROMPT_DIRTRIM=11
-PS1="${_col_gr}╭─┈${_col_no} ${_col_bl}\\u@\\h${_col_no}:${_col_rd}\${PWD}${_col_no}\n${_col_gr}╰─▶${_col_no} "
+PS1="╭─┈ ${_col_bl}\\u@\\h${_col_no}:${_col_rd}\${PWD}${_col_no}\n╰─▶ "
 PS2="> "
 
 #   indicate if last command returned an error exit code
