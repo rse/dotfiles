@@ -71,9 +71,6 @@ shopt -s cdspell
 shopt -s no_empty_cmd_completion
 shopt -s checkhash
 shopt -s globstar
-alias -- +="cd +"
-alias -- -="cd -"
-alias -- ..="cd .."
 
 #   customize history management
 shopt -s cmdhist
