@@ -67,9 +67,6 @@ Unix software packaging mechanism:
 - macOS [MacPorts]:<br/>
   `$ port install bash tmux less vim vifm git openssh`
 
-- Unix [OpenPKG]:<br/>
-  `$ openpkg build bash tmux less vim vifm git openssh | sh`
-
 Local Override Configurations
 -----------------------------
 
