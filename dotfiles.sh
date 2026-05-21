@@ -14,9 +14,9 @@ srcdir="@datadir@"
 #   command-line argument parsing
 usage () {
     echo "dotfiles: USAGE: dotfiles [-v|--version] [-q|--quiet] [-f|--force] [-p|--preserve] [-r|--remote <user>@<host>] <home-directory>" 1>&2
+    echo "                 dotfiles -e|--edit [<file>...]" 1>&2
 }
 if [ $# -eq 0 ]; then
-    echo "dotfiles: ERROR: invalid number of arguments" 1>&2
     usage
     exit 1
 fi
@@ -24,6 +24,7 @@ version=no
 quiet=no
 force=no
 preserve=no
+edit=no
 remote=""
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -31,6 +32,7 @@ while [ $# -gt 0 ]; do
         -q|--quiet    ) quiet=yes;        shift ;;
         -f|--force    ) force=yes;        shift ;;
         -p|--preserve ) preserve=yes;     shift ;;
+        -e|--edit     ) edit=yes;         shift ;;
         -r|--remote   ) shift; remote=$1; shift ;;
         * ) break ;;
     esac
@@ -39,8 +41,13 @@ if [ $version = yes ]; then
     echo "$versionstr"
     exit 0
 fi
+if [ $edit = yes ]; then
+    cd $HOME/.dotfiles
+    exec ${EDITOR:-vi} ${*:-.}
+    exit 0
+fi
 if [ $# -ne 1 ]; then
-    echo "dotfiles: ERROR: invalid number of arguments" 1>&2
+    echo "dotfiles: ERROR: invalid number of arguments $#" 1>&2
     usage
     exit 1
 fi
